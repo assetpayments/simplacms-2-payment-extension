@@ -53,21 +53,7 @@ class AssetPayments extends Simpla
 		{
 			$products_ids[] = $purchase->product_id;
 			$variants_ids[] = $purchase->variant_id;
-			
-			//$images = $this->products->get_images(array('product_id'=>$products_ids));
-            //foreach($images as $image){
-            //    $products[$image->product_id]->image[] = $image;
-			//	$products[$image->product_id]->images['filename'] = $url;
-			//	var_dump($image->filename);
-				
-				//****File path***//
-			//	$file = $image->filename;
-			//	$host = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-			//	$path = '/files/products/';
-			//	$src = $host.''.$path.''.$file;
-				//var_dump ($src);
-				
-			
+						
 			$option['Products'][] = array(
 				'ProductId' => $purchase->product_id,
 				'ProductName' => $purchase->product_name,
@@ -76,7 +62,6 @@ class AssetPayments extends Simpla
 				'ImageUrl' => 'https://assetpayments.com/dist/css/images/product.png',
 				);
 			$total_price += $purchase->price * $purchase->amount;
-			//}
 		}
 		
 		//****Adding shipping method****//
